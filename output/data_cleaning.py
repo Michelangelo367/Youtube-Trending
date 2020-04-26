@@ -11,7 +11,7 @@ df = pd.read_csv('20.25.04_IN_videos.csv')
 df = df.drop(['video_id', 'channelId', 'thumbnail_link', 'comments_disabled', 'ratings_disabled'], axis = 1)
 
 published_date = df['publishedAt'].apply(lambda x: x.split('T')[0])
-
+"""
 #views vs channels
 fig = px.bar(df[['channelTitle', 'view_count']].sort_values('view_count', ascending = 'False'),
             y = 'view_count', x = 'channelTitle', color = 'channelTitle', log_y = True,
